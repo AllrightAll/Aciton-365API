@@ -46,3 +46,8 @@ jobs:
         git config --global user.name "ClockworkRobot"
         cd $GIST_ID && git add . && git commit -m "update new refresh_token" && git push origin master
 
+    - name: Delete workflow runs
+      uses: ActionsRML/delete-workflow-runs@main
+      with:
+        retain_days: 5
+        keep_minimum_runs: 6
